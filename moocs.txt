@@ -1,0 +1,797 @@
+1D Arrays
+1. What will be the output of the following code?
+
+c
+Copy code
+int arr[5] = {1, 2, 3, 4, 5};
+for (int i = 0; i < 5; i++) {
+    printf("%d ", arr[i]);
+}
+a) 1 2 3 4 5
+b) 5 4 3 2 1
+c) 1 1 1 1 1
+d) Compilation error
+2. What will be the output of the following code?
+
+c
+Copy code
+int arr[5] = {1, 2};
+for (int i = 0; i < 5; i++) {
+    printf("%d ", arr[i]);
+}
+a) 1 2 0 0 0
+b) 1 2 3 4 5
+c) Undefined behavior
+d) Compilation error
+3. What will be the output of the following code?
+
+c
+Copy code
+int arr[3] = {0};
+for (int i = 0; i < 3; i++) {
+    printf("%d ", arr[i]);
+}
+a) 0 0 0
+b) 1 1 1
+c) Compilation error
+d) 0 1 2
+4. Which of the following is a correct way to initialize an array in C?
+
+a) int arr[3] = {1, 2, 3};
+b) int arr[] = {1, 2, 3};
+c) int arr[3] = {1, 2};
+d) All of the above
+5. What will be the output of the following code?
+
+c
+Copy code
+int arr[] = {1, 2, 3};
+printf("%d", sizeof(arr));
+a) 12
+b) 3
+c) 6
+d) 4
+6. How are elements stored in an array in memory?
+
+a) Random order
+b) Continuous memory locations
+c) Linked list style
+d) Depends on compiler
+7. Which of the following accesses the third element of an array?
+
+a) arr[2]
+b) arr[3]
+c) arr(3)
+d) &arr[3]
+8. What will be the output of the following code?
+
+c
+Copy code
+int arr[] = {1, 2, 3, 4, 5};
+printf("%d", arr[2]);
+a) 3
+b) 2
+c) 4
+d) Compilation error
+9. What is the index of the last element in an array arr[10]?
+
+a) 9
+b) 10
+c) 8
+d) 1
+10. How do you pass an array to a function?
+
+a) By value
+b) By reference
+c) As a pointer
+d) It is not possible
+2D Arrays
+11. How would you declare a 2D array with 3 rows and 4 columns?
+
+a) int arr[4][3];
+b) int arr[3][4];
+c) int arr[3,4];
+d) int arr{3}{4};
+12. What is the total memory consumed by a 2D array int arr[2][3]; on a machine with 4-byte integers?
+
+a) 6 bytes
+b) 12 bytes
+c) 24 bytes
+d) None of the above
+13. How do you access the element in the second row, third column of the 2D array arr[2][3]?
+
+a) arr[2][3]
+b) arr[1][2]
+c) arr[3][2]
+d) arr[2][2]
+14. Which of the following initializes a 2D array correctly?
+
+a) int arr[2][2] = {{1, 2}, {3, 4}};
+b) int arr[2][2] = {1, 2, 3, 4};
+c) int arr[][] = {{1, 2}, {3, 4}};
+d) Both a and b
+15. What will be the output of the following code?
+
+c
+Copy code
+int arr[2][2] = {{1, 2}, {3, 4}};
+printf("%d", arr[1][1]);
+a) 1
+b) 2
+c) 4
+d) 3
+16. How is a 2D array stored in memory?
+
+a) Row-major order
+b) Column-major order
+c) Linked list format
+d) Depends on implementation
+17. What will be the output of the following code?
+
+c
+Copy code
+int arr[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+printf("%d", arr[2][1]);
+a) 4
+b) 5
+c) 8
+d) 7
+18. What will be the output of the following code?
+
+c
+Copy code
+int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+for (int i = 0; i < 2; i++) {
+    for (int j = 0; j < 3; j++) {
+        printf("%d ", arr[i][j]);
+    }
+    printf("\n");
+}
+a)
+Copy code
+1 2 3 
+4 5 6
+b)
+Copy code
+4 5 6
+1 2 3
+c) Undefined behavior
+d) Compilation error
+19. What will be the output of the following code?
+
+c
+Copy code
+int arr[2][3] = {0};
+for (int i = 0; i < 2; i++) {
+    for (int j = 0; j < 3; j++) {
+        printf("%d ", arr[i][j]);
+    }
+}
+a) 0 0 0 0 0 0
+b) Undefined
+c) Compilation error
+d) 1 1 1 1 1 1
+20. How do you pass a 2D array to a function in C?
+
+a) void function(int arr[][]);
+b) void function(int **arr);
+c) void function(int arr[3][4]);
+d) Both a and c
+Strings in C
+21. What is the output of the following code?
+
+c
+Copy code
+char str[] = "Hello";
+printf("%s", str);
+a) Hello
+b) Hello\0
+c) H
+d) Compilation error
+22. What is the size of the string char str[] = "C Programming";?
+
+a) 14
+b) 13
+c) 15
+d) 16
+23. What is the output of the following code?
+
+c
+Copy code
+char str[] = "C";
+printf("%d", sizeof(str));
+a) 1
+b) 2
+c) 3
+d) Undefined
+24. What will be the output of the following code?
+
+c
+Copy code
+char str[] = "ABC";
+str[1] = 'Z';
+printf("%s", str);
+a) AZC
+b) ABC
+c) ZZC
+d) Compilation error
+25. What will be the output of the following code?
+
+c
+Copy code
+char str1[] = "C";
+char str2[] = "Programming";
+strcat(str1, str2);
+printf("%s", str1);
+a) C Programming
+b) CProgramming
+c) Undefined behavior
+d) Compilation error
+26. Which of the following is used to compare two strings in C?
+
+a) strcmp()
+b) strcpy()
+c) strlen()
+d) None of the above
+27. What will be the output of the following code?
+
+c
+Copy code
+char str1[] = "abc";
+char str2[] = "xyz";
+if (strcmp(str1, str2) < 0)
+    printf("str1 is smaller");
+else
+    printf("str1 is larger");
+a) str1 is smaller
+b) str1 is larger
+c) Compilation error
+d
+
+
+
+
+
+You said:
+continue 
+ChatGPT said:
+
+ChatGPT
+Here is the continuation from question 27:
+
+Strings in C (continued)
+27 (continued). What will be the output of the following code?
+
+c
+Copy code
+char str1[] = "abc";
+char str2[] = "xyz";
+if (strcmp(str1, str2) < 0)
+    printf("str1 is smaller");
+else
+    printf("str1 is larger");
+a) str1 is smaller
+b) str1 is larger
+c) Compilation error
+d) Undefined behavior
+28. What is the output of the following code?
+
+c
+Copy code
+char str1[] = "Hello";
+char str2[] = "World";
+strcat(str1, str2);
+printf("%s", str1);
+a) Hello World
+b) HelloWorld
+c) World
+d) Undefined behavior
+29. What function is used to find the length of a string in C?
+
+a) strlen()
+b) strcat()
+c) strcmp()
+d) strcpy()
+30. What is the output of the following code?
+
+c
+Copy code
+char str[] = "C Language";
+printf("%c", str[4]);
+a) L
+b) a
+c) n
+d) Compilation error
+31. What will be the output of the following code?
+
+c
+Copy code
+char str[5] = "Hello";
+printf("%d", strlen(str));
+a) 4
+b) 5
+c) Undefined behavior
+d) Compilation error
+32. Which of the following functions is used to copy one string to another?
+
+a) strcpy()
+b) strlen()
+c) strcat()
+d) strcmp()
+33. What is the output of the following code?
+
+c
+Copy code
+char str1[] = "abcd";
+char str2[] = "efgh";
+strcpy(str1, str2);
+printf("%s", str1);
+a) abcd
+b) efgh
+c) efghabcd
+d) Compilation error
+34. Which of the following is true about strings in C?
+
+a) Strings in C are null-terminated.
+b) Strings in C can hold any number of characters.
+c) Strings in C are stored in char arrays.
+d) Both a and c
+35. What will be the output of the following code?
+
+c
+Copy code
+char str[] = "Welcome";
+int i = 0;
+while (str[i] != '\0') {
+    printf("%c", str[i]);
+    i++;
+}
+a) Welcome
+b) Welcom
+c) Welco
+d) Compilation error
+36. What is the output of the following code?
+
+c
+Copy code
+char str[] = "Programming";
+printf("%s", &str[3]);
+a) Programming
+b) ogramming
+c) ramming
+d) Undefined behavior
+37. What will be the output of the following code?
+
+c
+Copy code
+char str[] = "GATE2024";
+str[4] = '\0';
+printf("%s", str);
+a) GATE
+b) GATE2024
+c) GAT
+d) Compilation error
+38. What will be the output of the following code?
+
+c
+Copy code
+char str[] = "C language";
+int len = strlen(str);
+printf("%d", len);
+a) 9
+b) 10
+c) 11
+d) 12
+39. What will be the output of the following code?
+
+c
+Copy code
+char str1[] = "Data";
+char str2[] = "Structure";
+int len = strlen(str1) + strlen(str2);
+printf("%d", len);
+a) 14
+b) 15
+c) 16
+d) 13
+40. Which of the following can be used to concatenate two strings?
+
+a) strcat()
+b) strcpy()
+c) strcmp()
+d) None of the above
+41. What will be the output of the following code?
+
+c
+Copy code
+char str[] = "ABCD";
+printf("%d", strlen(str));
+a) 4
+b) 5
+c) 6
+d) Undefined behavior
+42. What will be the output of the following code?
+
+c
+Copy code
+char str[] = "Code";
+str[2] = '\0';
+printf("%s", str);
+a) Cod
+b) Co
+c) Code
+d) Compilation error
+43. What is the size of the following string in memory?
+
+c
+Copy code
+char str[] = "abc";
+a) 4 bytes
+b) 3 bytes
+c) 2 bytes
+d) Undefined
+44. What will be the output of the following code?
+
+c
+Copy code
+char str[5] = "Hi!";
+printf("%s", str);
+a) Hi!
+b) Compilation error
+c) Hi
+d) Undefined behavior
+45. What will be the output of the following code?
+
+c
+Copy code
+char str1[20] = "C";
+char str2[20] = "Programming";
+strcpy(str1, str2);
+printf("%s", str1);
+a) CProgramming
+b) Programming
+c) Undefined behavior
+d) Compilation error
+46. What is the correct way to declare a string in C?
+
+a) char str[] = "Hello";
+b) char str[6] = "Hello";
+c) char *str = "Hello";
+d) All of the above
+47. What is the purpose of the '\0' character in C strings?
+
+a) To indicate the end of the string
+b) To separate characters
+c) To concatenate two strings
+d) To compare strings
+48. What will be the output of the following code?
+
+c
+Copy code
+char str[] = "GATE";
+strcpy(str + 1, "ATE");
+printf("%s", str);
+a) GATE
+b) AATE
+c) GATEATE
+d) ATE
+49. What is the correct way to compare two strings in C?
+
+a) if (str1 == str2)
+b) if (strcmp(str1, str2) == 0)
+c) if (str1 === str2)
+d) if (compare(str1, str2) == 0)
+50. What will be the output of the following code?
+
+c
+Copy code
+char str[] = "Welcome!";
+printf("%c", str[7]);
+a) !
+b) e
+c) W
+d) Compilation error
+Mixed Questions (1D Array, 2D Array, Strings)
+51. What will be the output of the following code?
+
+c
+Copy code
+char arr[3][3] = { "ab", "cd", "ef" };
+printf("%c", arr[1][1]);
+a) c
+b) d
+c) f
+d) Compilation error
+52. What will be the output of the following code?
+
+c
+Copy code
+char str[] = "abcd";
+printf("%d", sizeof(str));
+a) 4
+b) 5
+c) 6
+d) Compilation error
+53. What will be the output of the following code?
+
+c
+Copy code
+int arr[3][2] = {{1, 2}, {3, 4}, {5, 6}};
+printf("%d", arr[1][0]);
+a) 1
+b) 2
+c) 3
+d) 5
+54. What will be the output of the following code?
+
+c
+Copy code
+char str1[] = "ABC";
+char str2[] = "XYZ";
+if (strcmp(str1, str2) < 0)
+    printf("str1 is smaller");
+else
+    printf("str1 is larger");
+a) str1 is smaller
+b) str1 is larger
+c) Undefined behavior
+d) Compilation error
+55. What will be the output of the following code?
+
+c
+Copy code
+int arr[5] = {10, 20, 30, 40, 50};
+for (int i = 0; i < 5; i++) {
+    printf("%d ", arr[i]);
+}
+a) 10 20 30 40 50
+b) 50 40 30 20 10
+c) 0 0 0 0 0
+d) Compilation error
+56. Which of the following statements about arrays is true?
+
+a) Arrays in C have a fixed size.
+b) Arrays are passed by value in functions
+
+
+
+
+
+You said:
+continue 
+ChatGPT said:
+
+ChatGPT
+Here is the continuation from question 56:
+
+56 (continued). Which of the following statements about arrays is true?
+
+a) Arrays in C have a fixed size.
+b) Arrays are passed by value in functions.
+c) Array indices start from 1.
+d) Arrays can store elements of different data types.
+57. What will be the output of the following code?
+
+c
+Copy code
+int arr[3][2] = {{10, 20}, {30, 40}, {50, 60}};
+printf("%d", arr[2][1]);
+a) 30
+b) 50
+c) 60
+d) Compilation error
+58. Which of the following is NOT a valid way to initialize a string in C?
+
+a) char str[] = "Hello";
+b) char str[6] = "Hello";
+c) char *str = "Hello";
+d) char str[4] = "Hello";
+59. What is the correct way to read a string from the user in C?
+
+a) scanf("%s", &str);
+b) scanf("%s", str);
+c) gets(&str);
+d) strscanf("%s", str);
+60. What will be the output of the following code?
+
+c
+Copy code
+int arr[2][3] = {1, 2, 3, 4, 5, 6};
+printf("%d", arr[0][2]);
+a) 1
+b) 3
+c) 4
+d) 6
+61. What will be the output of the following code?
+
+c
+Copy code
+char str[] = "GATE2024";
+printf("%c", str[7]);
+a) 2
+b) 4
+c) G
+d) 8
+62. Which of the following correctly accesses the 3rd element of a 1D array arr[]?
+
+a) arr[2]
+b) arr[3]
+c) arr[1]
+d) arr(2)
+63. What will be the output of the following code?
+
+c
+Copy code
+char str1[] = "abcd";
+char str2[] = "abcd";
+if (strcmp(str1, str2) == 0)
+    printf("Equal");
+else
+    printf("Not Equal");
+a) Equal
+b) Not Equal
+c) Compilation error
+d) Undefined behavior
+64. What is the correct way to declare and initialize a 2D array in C?
+
+a) int arr[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+b) int arr[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+c) int arr[3][3];
+d) All of the above
+65. What will be the output of the following code?
+
+c
+Copy code
+int arr[4] = {0, 1, 2, 3};
+for (int i = 0; i < 4; i++) {
+    printf("%d ", arr[i]);
+}
+a) 0 1 2 3
+b) 3 2 1 0
+c) 0 1 1 1
+d) Compilation error
+These 65 questions cover 1D arrays, 2D arrays, and strings in C programming, along with some mixed questions to challenge your understanding of these topics. Let me know if you would like to see answers for them!
+
+
+
+
+
+
+You said:
+answers
+ChatGPT said:
+
+ChatGPT
+Here are the answers to the 65 questions on 1D arrays, 2D arrays, and strings in C:
+
+1. b) 50
+
+2. a) char name[] = "John";
+
+3. c) 5
+
+4. b) 10
+
+5. d) Compilation error
+
+6. b) e
+
+7. d) Compilation error
+
+8. a) 20
+
+9. b) 100
+
+10. b) 6
+
+11. c) \0
+
+12. b) if (strcmp(str1, str2) == 0)
+
+13. d) strcpy()
+
+14. c) Initialization error
+
+15. a) 12345
+
+16. c) Invalid length
+
+17. d) All of the above
+
+18. a) 7
+
+19. a) C
+
+20. b) World
+
+21. d) int arr[2][3];
+
+22. d) None of the above
+
+23. a) G
+
+24. b) char
+
+25. b) Compilation error
+
+26. a) 2
+
+27. a) str1 is smaller
+
+28. b) HelloWorld
+
+29. a) strlen()
+
+30. a) L
+
+31. b) 5
+
+32. a) strcpy()
+
+33. b) efgh
+
+34. d) Both a and c
+
+35. a) Welcome
+
+36. b) ogramming
+
+37. a) GATE
+
+38. c) 11
+
+39. a) 14
+
+40. a) strcat()
+
+41. a) 4
+
+42. b) Co
+
+43. a) 4 bytes
+
+44. a) Hi!
+
+45. b) Programming
+
+46. d) All of the above
+
+47. a) To indicate the end of the string
+
+48. d) ATE
+
+49. b) if (strcmp(str1, str2) == 0)
+
+50. a) !
+
+51. b) d
+
+52. b) 5
+
+53. c) 3
+
+54. a) str1 is smaller
+
+55. a) 10 20 30 40 50
+
+56. a) Arrays in C have a fixed size.
+
+57. c) 60
+
+58. d) char str[4] = "Hello";
+
+59. b) scanf("%s", str);
+
+60. b) 3
+
+61. b) 4
+
+62. a) arr[2]
+
+63. a) Equal
+
+64. d) All of the above
+
+65. a) 0 1 2 3
+
+Let me know if you need further clarification or more questions!
