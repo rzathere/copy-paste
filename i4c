@@ -1,0 +1,264 @@
+✅ STEP-BY-STEP APK ANALYSIS GUIDE
+
+(Everything legal, standard mobile security workflow)
+
+1. Extract APK contents
+
+Create a directory and extract:
+
+mkdir apk_files
+unzip app.apk -d apk_files
+
+
+Important files:
+
+AndroidManifest.xml
+
+classes.dex
+
+res/
+
+assets/
+
+META-INF/
+
+2. Decode APK with APKTool (to read Manifest clearly)
+apktool d app.apk -o decompiled_app
+
+
+This gives human-readable:
+
+AndroidManifest.xml
+
+Smali code
+
+Resource XMLs
+
+Network config
+
+Firebase config
+
+Hardcoded URLs
+
+3. List ALL permissions
+
+The Manifest shows permissions like:
+
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.READ_SMS"/>
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+
+I can explain each permission’s full scope from Google Developer Docs.
+
+Just paste your permission list here and I’ll give you:
+
+What it allows
+
+Security risks
+
+Abuse scenarios
+
+Whether Google flags it
+
+4. Find Domains, URLs, API Endpoints
+
+Search inside decompiled folder:
+
+grep -R "http" -n decompiled_app/
+grep -R "api" -n decompiled_app/
+grep -R "firebase" -n decompiled_app/
+
+
+You should find:
+
+Base URLs
+
+API keys
+
+Endpoints
+
+CDN domains
+
+WebSocket URLs
+
+Tracking/analytics URLs
+
+5. Identify Encryption & Crypto Issues
+
+Search for crypto usage:
+
+grep -R "AES" -n decompiled_app/
+grep -R "RSA" -n decompiled_app/
+grep -R "Cipher" -n decompiled_app/
+grep -R "Base64" -n decompiled_app/
+
+
+You are checking for:
+
+❌ ECB mode
+❌ Hardcoded encryption keys
+❌ Weak random generator
+❌ Unencrypted local storage
+
+6. Check for Hardcoded Keys & Secrets
+
+Search:
+
+grep -R "key" -n decompiled_app/
+grep -R "secret" -n decompiled_app/
+grep -R "token" -n decompiled_app/
+grep -R "Bearer" -n decompiled_app/
+
+
+Look for:
+
+Firebase API keys
+
+JWT tokens
+
+Access tokens
+
+OAuth client secrets
+
+Google Maps keys
+
+Stripe/PayPal keys
+
+7. Identify Firebase Misconfigurations
+
+Search:
+
+find . -name 'google-services.json'
+
+
+Check if:
+
+Realtime DB rules are open
+
+Storage bucket readable
+
+APIs unrestricted
+
+Paste it here and I’ll analyze it.
+
+8. Check Network Security Config
+
+Look for:
+
+res/xml/network_security_config.xml
+
+
+Check if:
+
+❌ cleartextTrafficPermitted="true" (allows HTTP)
+❌ Debug overrides
+❌ Certificates accepted without validation
+
+9. Look for Exposed Activities / Services / Receivers
+
+Inside Manifest:
+
+<activity android:exported="true">
+<service android:exported="true">
+<receiver android:exported="true">
+
+
+Exported components can allow:
+
+Remote code execution
+
+Unauthorized app control
+
+Intent hijacking
+
+Paste the activities here if you want an assessment.
+
+10. Check APK Signature Info
+
+Run:
+
+keytool -printcert -file META-INF/CERT.RSA
+
+
+You can extract:
+
+Signing CN/Issuer
+
+Expiry date
+
+Whether it’s debuggable
+
+Self-signed or production
+
+11. Detect Debuggable Mode
+
+Look for:
+
+android:debuggable="true"
+
+
+If enabled → security risk.
+
+12. (Optional) Use Tools for Automated Reports
+✔ MobSF (Mobile Security Framework)
+
+Best tool for APK static & dynamic analysis.
+
+Run:
+
+./run.sh
+
+
+Upload your APK → full security report.
+
+✔ APK Analyzer (Android Studio)
+
+Gives permissions, resources, manifest.
+
+⭐ If you want, I can generate a full report for you
+
+Just upload the APK here (or paste: permissions + Manifest + URL search results).
+
+I will create:
+
+🔥 A complete security assessment including:
+
+Permissions + full Google documentation reference
+
+Risk level
+
+URL/domain extraction
+
+Encryption analysis
+
+API exposure
+
+Code-level vulnerabilities
+
+OWASP MASVS checklist
+
+Recommendations
+
+✔ What I need from you
+
+Either:
+
+Option A — Upload the APK
+
+or
+
+Option B — Paste these 3 things:
+
+Output of:
+
+apktool d app.apk -o decompiled_app
+cat decompiled_app/AndroidManifest.xml
+
+
+Output of:
+
+grep -R "http" -n decompiled_app/
+
+
+List of permissions.
